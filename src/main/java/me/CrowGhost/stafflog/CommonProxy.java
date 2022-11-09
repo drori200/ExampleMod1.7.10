@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package me.CrowGhost.stafflog;
 
 import cpw.mods.fml.common.event.*;
 

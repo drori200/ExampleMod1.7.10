@@ -1,5 +1,8 @@
 // Add your dependencies here
 
 dependencies {
+    shadowCompile("com.github.DV8FromTheWorld:JDA:5.0.0-alpha.22"){
+        exclude module: "opus-java"
 
+    }
 }
