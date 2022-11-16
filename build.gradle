@@ -25,7 +25,6 @@ import java.util.zip.ZipOutputStream
 buildscript {
     repositories {
         mavenCentral()
-
         maven {
             name 'forge'
             url 'https://maven.minecraftforge.net'
@@ -45,7 +44,36 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2.11'
+        // moved to the beginning to be the overrider
+        classpath 'org.ow2.asm:asm:9.0'
+        classpath 'org.ow2.asm:asm-tree:9.0'
+        classpath 'org.ow2.asm:asm-xml:6.2.1'
+        classpath 'org.ow2.asm:asm-util:9.0'
+        classpath 'org.ow2.asm:asm-commons:9.0'
+        classpath 'com.google.guava:guava:18.0'
+
+        classpath 'net.sf.opencsv:opencsv:2.3' // reading CSVs.. also used by SpecialSource
+        classpath 'com.cloudbees:diff4j:1.1' // for diffing and patching
+        classpath 'com.github.abrarsyed.jastyle:jAstyle:1.2' // formatting
+        classpath 'com.github.jponge:lzma-java:1.3' // replaces the LZMA binary
+        classpath 'com.nothome:javaxdelta:2.0.1' // GDIFF implementation for BinPatches
+        classpath 'com.google.code.gson:gson:2.2.4' // Used instead of Argo for building changelog.
+        classpath 'com.github.tony19:named-regexp:0.2.3' // 1.7 Named regexp features
+
+        classpath 'net.md-5:SpecialSource:1.7.3' // deobf and reobs
+
+        // because curse
+        classpath 'org.apache.httpcomponents:httpclient:4.3.3'
+        classpath 'org.apache.httpcomponents:httpmime:4.3.3'
+
+        // mcp stuff
+        classpath 'de.oceanlabs.mcp:RetroGuard:3.6.6'
+        classpath 'de.oceanlabs.mcp:mcinjector:3.2-SNAPSHOT'
+        classpath('org.eclipse.jdt:org.eclipse.jdt.core:3.10.0+') {
+            force = true
+        }
+        classpath 'net.minecraftforge.srg2source:Srg2Source:3.2-SNAPSHOT'
+        classpath files('libs/ForgeGradle-1.2.11.dirty.jar')
     }
 }
 plugins {
