@@ -42,14 +42,15 @@ buildscript {
             name 'Scala CI dependencies'
             url 'https://repo1.maven.org/maven2/'
         }
+        maven { url 'https://github.com/drori200/maven/raw/main' }
     }
     dependencies {
         // moved to the beginning to be the overrider
-        classpath 'org.ow2.asm:asm:9.0'
-        classpath 'org.ow2.asm:asm-tree:9.0'
+        classpath 'org.ow2.asm:asm:9.4'
+        classpath 'org.ow2.asm:asm-tree:9.4'
         classpath 'org.ow2.asm:asm-xml:6.2.1'
-        classpath 'org.ow2.asm:asm-util:9.0'
-        classpath 'org.ow2.asm:asm-commons:9.0'
+        classpath 'org.ow2.asm:asm-util:9.4'
+        classpath 'org.ow2.asm:asm-commons:9.4'
         classpath 'com.google.guava:guava:18.0'
 
         classpath 'net.sf.opencsv:opencsv:2.3' // reading CSVs.. also used by SpecialSource
@@ -60,7 +61,7 @@ buildscript {
         classpath 'com.google.code.gson:gson:2.2.4' // Used instead of Argo for building changelog.
         classpath 'com.github.tony19:named-regexp:0.2.3' // 1.7 Named regexp features
 
-        classpath 'net.md-5:SpecialSource:1.7.3' // deobf and reobs
+        classpath 'net.md-5:SpecialSource-custom:1.7.3' // deobf and reobs
 
         // because curse
         classpath 'org.apache.httpcomponents:httpclient:4.3.3'
